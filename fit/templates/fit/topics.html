@@ -1,0 +1,136 @@
+<html>
+ <head>
+  
+  <style>
+   #d1
+   {
+    width:710px;
+    height:470px;
+    margin:0 auto 0;
+    background:linear-gradient(rgba(0,0,128),rgb(50,205,50),black);
+  
+    
+   }
+   @-webkit-keyframes a1
+   {
+    to{
+    width:200px;
+    height:100px;
+    background:linear-gradient(orange,rgb(224,255,255));
+    position:relative;
+    left:400px;
+    top:40px;
+    border:4px solid black; 
+   
+    }
+    from
+    {
+    width:400px;
+    height:300px;
+    background:linear-gradient(orange,rgb(224,255,255));
+    position:relative;
+    left:400px;
+    top:40px;
+    border:4px solid black; 
+    transform:rotate(60deg);
+    
+    
+    
+    }
+   }
+   #d2
+   {
+    width:200px;
+    height:100px;
+    background:linear-gradient(orange,rgb(224,255,255));
+    position:relative;
+    left:450px;
+    top:40px;
+    border:4px solid black; 
+    -webkit-animation:a1 4s;
+    -webkit-animation-interation-count:2;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    font-style:italic;
+    
+    
+   }
+   #d2:hover
+   {
+    transform:rotate(-50deg);
+   
+    background:linear-gradient(red,rgb(224,255,255));
+   }
+   ul
+   {
+    
+   list-style-type:none;
+   
+   }
+   li
+   {
+    font-weight:bold;
+    color:black;
+    font-size:19px;
+    font-style:italic;
+   }
+   a
+   {
+    font-size:20px;
+    color:red;
+    font-weight:bold;
+    text-decoration:none;
+    position:relative;
+    left:20px;
+   }
+   a:hover
+   {
+    font-size:23px;
+    color:rgb(255,255,255);
+   }
+   #d3
+   {
+    width:100px;
+    height:40px;
+    background-color:black;
+    border-radius:40px;
+    top:10px;
+    margin-top:0px;
+   }
+   #d3 a
+   {
+    text-align:center;
+    position:relative;
+    top:2px;
+    font-size:15px;
+    color:gold;
+   }
+ #d3 a:hover
+ {
+  
+  color:rgb(255,255,255);
+ }  
+  </style>
+ </head>
+ <body>
+ 
+  <div id="d1">
+    <div id="d3">
+      <a href="{%url 'fit:index' %}"> HOME </a>
+   </div>
+   <div id="d2">
+     coments
+   </div> 
+   
+   <ul>
+    {% for topic in topics %}
+      <li> {{topic}} </li>
+    {% empty %}
+      <li> no have been yet </li>
+    {% endfor %} 
+   </ul>
+   <a href="{% url 'fit:new_topics'  %}"> add idea </a>
+  </div>
+ </body>
+</html>

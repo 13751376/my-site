@@ -1,0 +1,142 @@
+<html>
+ <head>
+  
+  <style>
+  #d2
+  {
+   width:737px;
+   height:460px;
+   background:linear-gradient(black,rgba(0,0,139));
+   margin:0 auto 0;
+   margin-bottom:10px;
+  }
+    
+  #d1
+   {
+    width:130px;
+    height:455px;
+    background:linear-gradient(rgb(72,209,204),black,rgb(139,0,139));
+    padding:0px 0px 0px 0px;
+    margin:0px 0px 0px 0px ;
+    border:2px solid black;
+    float:left;
+   }
+   ul
+   {
+    list-style-type:none;
+    
+   }
+   li a
+   {
+    text-decoration:none;
+    display:block;
+    padding:20px 0px 0px 0px;
+    
+    
+   }
+   li a:hover
+   {
+    color:gold;
+    font-size:22px;
+   }
+   a
+   {
+    position:relative;
+    right:26px; 
+    font-size:20px;
+    color:rgb(255,255,255);
+    font-weight:bold;
+    
+    
+   }
+   
+   #d3
+   {
+    width:150px;
+    height:70px;
+    background:linear-gradient(orange,rgb(224,255,255));
+    float:left;
+    position:relative;
+    left:395px;
+    top:27px;
+    border-radius:30px;
+    text-align:center;
+    transition: transform 2s ;
+    
+   }
+   #d3:hover
+   {
+    transform:rotate(-30deg);
+   }
+  p
+  {
+   font-size:17px;
+   color:black;
+   font-weight:bold;
+  }
+  #d4
+  {
+   width:180px;
+   height:100px;
+   background-color:rgba(230,230,250);
+   float:left;
+   position:relative;
+   top:300;
+   left:184px;
+    border:3px solid black;
+  }
+  #d4 a
+  {
+   position:relative;
+   font-size:24px;
+   top:20px; 
+   left:42px;
+   text-decoration:none;
+   color:gold;
+ 
+  }
+ #d4 a:hover
+ {
+  color:black;
+  font-size:24px; 
+ } 
+ #d5
+ {
+ 
+ 
+  position:relative;
+  right:300px;
+  bottom:200px;
+  
+ }
+  </style>
+ </haed>
+ <body>
+  <div id="d2">
+    <div id="d1">
+      <ul>
+       <li> <a href="{% url 'fit:topics'  %}"> idea </a></li>
+       <li> <a href="{% url 'fit:show'%}"> pictiures  </a> </li>
+       <li> <a href="{% url 'fit:movie' %}"> movie</a> </li>
+       
+       
+      </ul> 
+    </div>
+    <div id="d3">
+     <p> welcome</p>
+    </div> 
+    <div id="d4">
+      {% if user.is_authenticated %}
+          <span style="font-size:15px;font-weight:bold;">HELLO {{ user.username}}.</span>
+         <a href="{% url 'users:logout' %}"> logout </a>   
+      {% else %}
+         <a href="{% url 'users:login' %}"> login </a>
+        <div id="d5"> 
+         <a href="{%url 'users:register'%}"> Register </a>
+        </div>  
+      {% endif %} 
+    </div>
+  </div>
+  
+ </body>
+</html>

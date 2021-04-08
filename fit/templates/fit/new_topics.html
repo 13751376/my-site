@@ -1,0 +1,15 @@
+<html>
+ <haed>
+ </head>
+ <body>
+
+  <p> add your idea </p>
+  <form action="" method='post'>
+  {% csrf_token %}
+  {{form.as_p}}
+   <button type='submit'> new idea </button> 
+  </form>
+  
+  
+ </body>
+</html>

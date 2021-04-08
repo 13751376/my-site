@@ -1,0 +1,18 @@
+<html>
+ <head>
+ </head>
+ <body>
+  {% if form.errors %} 
+   <p> password and your username is not valid. ! </p> 
+  {% endif %} 
+  <form action="{% url 'users:login' %}" method='post'>
+   {% csrf_token %}
+   {{ form.as_p}}
+   <button name='submit'> log in  </button>
+   <input type="hidden" name="next" value="{% url 'fit:index' %}"/>
+   <input type="checkbox" name="remember" value="" /> remember
+  </form> 
+ </body>
+ 
+</html>
+  
