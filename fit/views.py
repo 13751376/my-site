@@ -22,3 +22,5 @@ def new_topics(request):
         form=TopicForm()
     return render(request,'fit/new_topics.html',{'form':form})   
            
+def test_comment(request):
+    
