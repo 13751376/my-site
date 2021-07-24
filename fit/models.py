@@ -7,3 +7,7 @@ class Topic(models.Model):
     
     def __str__(self):
         return self.title
+class User(models.Model):
+    name=models.CharField(max_length=20)
+    number=models.IntegerField() 
+    time=models.DateTimeField()   
